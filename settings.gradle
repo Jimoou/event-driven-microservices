@@ -1,0 +1,6 @@
+rootProject.name = 'event-driven-microservices'
+include 'news-to-kafka-service'
+include 'service-registry'
+include 'kafka'
+include 'config-server'
+
