@@ -42,7 +42,7 @@ public class TwitterKafkaStreamRunner implements StreamRunner {
   @PreDestroy
   public void shutdown() {
     if (twitterStream != null) {
-      LOG.info("Closing twitter stream!");
+      LOG.info("트위터 스트림 종료!");
       twitterStream.shutdown();
     }
   }
@@ -51,6 +51,6 @@ public class TwitterKafkaStreamRunner implements StreamRunner {
     String[] keywords = twitterToKafkaServiceConfigData.getTwitterKeywords().toArray(new String[0]);
     FilterQuery filterQuery = new FilterQuery(keywords);
     twitterStream.filter(filterQuery);
-    LOG.info("Started filtering twitter stream for keywords {}", Arrays.toString(keywords));
+    LOG.info("키워드에 대한 트위터 스트림 필터가 생성 {}", Arrays.toString(keywords));
   }
 }
