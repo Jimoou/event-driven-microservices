@@ -22,9 +22,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 @Component
 @ConditionalOnProperty(
-    name = "twitter-to-kafka-service.enable-mock-tweets",
-    havingValue = "false",
-    matchIfMissing = true)
+ name = "twitter-to-kafka-service.enable-mock-tweets", havingValue = "true")
 public class MockKafkaStreamRunner implements StreamRunner {
   // 각종 로깅을 위한 Logger 객체를 생성합니다.
   private static final Logger LOG = LoggerFactory.getLogger(MockKafkaStreamRunner.class);
